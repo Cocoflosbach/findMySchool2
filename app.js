@@ -13,9 +13,11 @@ app.get("/", (req, res) => {
   res.send("We are on Home");
 });
 
-app.get("/schools", (req, res) => {
-  res.send("A List of schools should be here");
-});
+//IMPORT ROUTE
+const schoolsRoute = require("./routes/schools");
+app.use("/schools", schoolsRoute);
+
+app.use("/users", schoolsRoute);
 
 //CONNECT TO DATABASE
 mongoose.connect(process.env.DB_CONNECTION, () =>
