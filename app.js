@@ -1,12 +1,11 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 require("dotenv/config");
 
-//Middlewares
-/* app.use("/schools", () => {
-  console.log("This is a middleware running");
-}); */
+//PASS BODYPARSER AS MIDDLEWARE
+app.use(bodyParser.json());
 
 //ROUTES
 app.get("/", (req, res) => {
