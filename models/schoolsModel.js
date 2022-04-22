@@ -8,6 +8,7 @@ const SchoolSchema = mongoose.Schema({
   Tuition: String,
   Contact: String,
   Website: String,
+  ImagePath: String,
 });
 
 module.exports = mongoose.model("Schools", SchoolSchema);
