@@ -65,4 +65,27 @@ router.delete("/:Name", async (req, res) => {
   }
 });
 
+// UPDATE SCHOOL INFORMATION
+router.patch("/:Name", async (req, res) => {
+  try {
+    const updatedPost = await School.updateOne(
+      { Name: req.params.Name },
+      {
+        $set: {
+          Name: req.body.Name,
+          Description: req.body.Description,
+          Address: req.body.Address,
+          Classes: req.body.Classes,
+          Tuition: req.body.Tuition,
+          Contact: req.body.Contact,
+          Website: req.body.Website,
+          ImagePath: req.body.ImagePath,
+        },
+      }
+    );
+    res.json(updatedPost);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
 module.exports = router;
