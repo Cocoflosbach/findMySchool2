@@ -2,8 +2,14 @@ const express = require("express");
 const router = express.Router();
 const School = require("../models/schoolsModel");
 
-router.get("/", (req, res) => {
-  res.send("Here is a list of all schools");
+// GET LIST OF ALL SCHOOLS
+router.get("/", async (req, res) => {
+  try {
+    const posts = await School.find();
+    res.json(posts);
+  } catch (err) {
+    res.json({ message: err });
+  }
 });
 
 router.post("/", (req, res) => {
