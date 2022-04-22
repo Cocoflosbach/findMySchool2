@@ -38,7 +38,31 @@ router.post("/", async (req, res) => {
     })
     .catch((err) => {
       res.json({ message: error });
+    }); */
+});
+
+// GET A SPECIFIC SCHOOL BY NAME
+
+router.get("/:Name", async (req, res) => {
+  console.log(req.params.Name);
+  try {
+    const post = await School.findOne({ Name: req.params.Name });
+    res.json(post);
+  } catch (err) {
+    res.status(500).send("Error: " + err);
+  }
+});
+
+// DELETE A SPECIFIC SCHOOL BY NAME
+router.delete("/:Name", async (req, res) => {
+  try {
+    const deletedPost = await School.findOneAndDelete({
+      Name: req.params.Name,
     });
+    res.json(deletedPost);
+  } catch (err) {
+    res.json({ message: err });
+  }
 });
 
 module.exports = router;
