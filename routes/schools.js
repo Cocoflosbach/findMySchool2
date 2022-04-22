@@ -12,7 +12,8 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/", (req, res) => {
+// POST NEW SCHOOL INFORMATION
+router.post("/", async (req, res) => {
   const post = new School({
     Name: req.body.Name,
     Description: req.body.Description,
@@ -21,8 +22,16 @@ router.post("/", (req, res) => {
     Tuition: req.body.Tuition,
     Contact: req.body.Contact,
     Website: req.body.Website,
+    ImagePath: req.body.ImagePath,
   });
-  post
+  try {
+    const savedPost = await post.save();
+    res.json(savedPost);
+  } catch (err) {
+    res.json({ message: err });
+  }
+
+  /* post
     .save()
     .then((data) => {
       res.json(data);
