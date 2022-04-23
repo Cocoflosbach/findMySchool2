@@ -19,8 +19,9 @@ app.use("/schools", schoolsRoute);
 app.use("/users", schoolsRoute);
 
 //CONNECT TO DATABASE
-mongoose.connect(process.env.DB_CONNECTION, () =>
-  console.log("The database is connected!")
+mongoose.connect(
+  "mongodb+srv://new-user-01:H3GoK3PzTljTRaw9@cocoflosbachdb.zynrz.mongodb.net/schoolDB?retryWrites=true&w=majority",
+  () => console.log("The database is connected!")
 );
 
 //START LISTENING TO THE SERVER
