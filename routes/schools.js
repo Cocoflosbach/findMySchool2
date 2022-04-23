@@ -30,15 +30,6 @@ router.post("/", async (req, res) => {
   } catch (err) {
     res.json({ message: err });
   }
-
-  /* post
-    .save()
-    .then((data) => {
-      res.json(data);
-    })
-    .catch((err) => {
-      res.json({ message: error });
-    }); */
 });
 
 // GET A SPECIFIC SCHOOL BY NAME
