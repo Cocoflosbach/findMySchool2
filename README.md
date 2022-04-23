@@ -29,7 +29,7 @@ single School by name to the user
 
 ## Live website
 
-myFunFlix movie API is hosted [here](https://my-flix-2406.herokuapp.com).
+myFunFlix movie API is hosted [here](https://find-my-school.herokuapp.com/).
 
 ## Author
 
