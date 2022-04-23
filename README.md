@@ -27,6 +27,10 @@ single School by name to the user
 - Allow users to remove a school from their list of favorites
 - Allow existing users to deregister
 
+## Live website
+
+myFunFlix movie API is hosted [here](https://my-flix-2406.herokuapp.com).
+
 ## Author
 
 **Coco Flosbach**
